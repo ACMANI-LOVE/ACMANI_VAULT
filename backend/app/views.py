@@ -8,31 +8,31 @@ from .serializers import *
 # =========+=========+=========+=========+=========+
 
 class ConfigsViewSet(viewsets.ModelViewSet):
-  queryset = BaseModelClass.objects.all() # FIX Model
-  serializer_class  = BaseModelClass.objects.all() # FIX Serializer
+  queryset = Constants.objects.all() # FIX Model
+  serializer_class  = ConstantsSerializer # FIX Serializer
 # =========+=========+=========+=========+=========+
 
 class GroupsViewSet(viewsets.ModelViewSet):
-  queryset = BaseModelClass.objects.all() # FIX Model
-  serializer_class  = BaseModelClass.objects.all() # FIX Serializer
+  queryset = Groups.objects.all() # FIX Model
+  serializer_class  = GroupsSerializer # FIX Serializer
 # =========+=========+=========+=========+=========+
 
 class TasksViewSet(viewsets.ModelViewSet):
-  queryset = BaseModelClass.objects.all() # FIX Model
-  serializer_class  = BaseModelClass.objects.all() # FIX Serializer
+  queryset = Task.objects.all() # FIX Model
+  serializer_class  = TaskSerializer # FIX Serializer
 # =========+=========+=========+=========+=========+
 
 class PostsViewSet(viewsets.ModelViewSet):
-  queryset = BaseModelClass.objects.all() # FIX Model
-  serializer_class  = BaseModelClass.objects.all() # FIX Serializer
+  queryset = Posts.objects.all() # FIX Model
+  serializer_class  = PostsSerializer # FIX Serializer
 # =========+=========+=========+=========+=========+
 
 class PromptsViewSet(viewsets.ModelViewSet):
-  queryset = BaseModelClass.objects.all() # FIX Model
-  serializer_class  = BaseModelClass.objects.all() # FIX Serializer
+  queryset = Prompts.objects.all() # FIX Model
+  serializer_class  = PromptsSerializer # FIX Serializer
 # =========+=========+=========+=========+=========+
 
 class RequestsViewSet(viewsets.ModelViewSet):
-  queryset = BaseModelClass.objects.all() # FIX Model
-  serializer_class  = BaseModelClass.objects.all() # FIX Serializer
+  queryset = Requests.objects.all() # FIX Model
+  serializer_class  = RequestsSerializer # FIX Serializer
 # =========+=========+=========+=========+=========+

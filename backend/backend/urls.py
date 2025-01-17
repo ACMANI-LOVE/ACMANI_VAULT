@@ -8,7 +8,7 @@ from drf_spectacular.views import (
     SpectacularRedocView,
 )
 
-from backend.app.views import *
+from app.views import *
 
 # Initialize
 router = DefaultRouter()
