@@ -59,7 +59,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",  # 開発サーバー
     "http://localhost:3000",  # 開発サーバー
     "http://192.168.2.119:3000",  # 開発サーバー
-    
 ]
 
 MIDDLEWARE = [
