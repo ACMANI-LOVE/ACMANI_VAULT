@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-_$w^ik8ijldk^%-zu6@05p!ntpr&077-2_dgbsm$a!l3pay+$)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['192.168.2.119', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -57,6 +57,9 @@ SPECTACULAR_SETTINGS = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",  # 開発サーバー
     "http://127.0.0.1:8000",  # 開発サーバー
+    "http://localhost:3000",  # 開発サーバー
+    "http://192.168.2.119:3000",  # 開発サーバー
+    
 ]
 
 MIDDLEWARE = [
