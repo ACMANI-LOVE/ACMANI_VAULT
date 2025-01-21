@@ -1,115 +1,279 @@
-
 from rest_framework import serializers
 from .models import *
 
+
 class BaseModelClassSerializer(serializers.ModelSerializer):
-  class Meta:
-    abstract = True
-    model = BaseModelClass
-    fields = ["id", "created_at", "updated_at", "deleted_at"]
+    class Meta:
+        abstract = True
+        model = BaseModelClass
+        fields = [
+            "id",
+            "created_at",
+            "updated_at",
+            "deleted_at",
+        ]
+
 
 # =========+=========+=========+=========+=========+
 # Serializers
 # =========+=========+=========+=========+=========+
 
+
 class ConstantsSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Constants
-    fields = ['Category', 'isLewd', 'Name', 'Value']
+    class Meta:
+        model = Constants
+        fields = [
+            "category",
+            "is_lewd",
+            "name",
+            "value",
+        ]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class WeightsSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Weights
-    fields = ['Model', 'Theme', 'Weathers', 'Periods', 'Angles', 'Directions', 'Focuses']
+    class Meta:
+        model = Weights
+        fields = [
+            "model",
+            "theme",
+            "weathers",
+            "periods",
+            "angles",
+            "directions",
+            "focuses",
+        ]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class PhrasesSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Phrases
-    fields = ['Header', 'Footer', 'Negative', 'RequestOrder', 'PlayingOrder', 'PostingDescription', 'ContentDescription']
+    class Meta:
+        model = Phrases
+        fields = [
+            "header",
+            "footer",
+            "negative",
+            "request_order",
+            "playing_order",
+            "posting_desc",
+            "content_desc",
+        ]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class GroupsSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Groups
-    fields = ['name']
+    class Meta:
+        model = Groups
+        fields = ["name"]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class TaskSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Task
-    fields = ['group_id', 'index', 'name']
+    class Meta:
+        model = Task
+        fields = ["group_id", "index", "name"]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class PostsSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Posts
-    fields = ['task_id', 'Story', 'TitleJP', 'TitleEN', 'TitleSymbol', 'PictureCount', 'WallpaperCount', 'PictureURL', 'WallpaperURL', 'Notes']
+    class Meta:
+        model = Posts
+        fields = [
+            "task_id",
+            "story",
+            "title_JP",
+            "title_EN",
+            "title_symbol",
+            "picture_count",
+            "wallpaper_count",
+            "picture_URL",
+            "wallpaper_URL",
+            "notes",
+        ]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class PromptsSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Prompts
-    fields = ['task_id', 'HEADER', 'Basis', 'Faces', 'Hairs', 'Figures', 'Location', 'Outfits', 'Equips', 'Emotes', 'Fluids', 'Upper', 'Lower', 'Actions', 'Posing', 'Additional', 'FOOTER']
+    class Meta:
+        model = Prompts
+        fields = [
+            "task_id",
+            "HEADER",
+            "basis",
+            "faces",
+            "hairs",
+            "figures",
+            "location",
+            "outfits",
+            "equips",
+            "emotes",
+            "fluids",
+            "upper",
+            "lower",
+            "actions",
+            "posing",
+            "additional",
+            "FOOTER",
+        ]
+
+
 # =========+=========+=========+=========+=========+
 
-class RequestsSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Requests
-    fields = ['task_id']
-# =========+=========+=========+=========+=========+
 
 class BasisSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Basis
-    fields = ['request_id', 'Model', 'Thickness', 'Theme', 'Species', 'SpeciesDetails', 'Traits', 'TraitsDetails']
+    class Meta:
+        model = Basis
+        fields = [
+            "task_id",
+            "model",
+            "thickness",
+            "theme",
+            "species",
+            "species_details",
+            "traits",
+            "traits_details",
+        ]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class LocationSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Location
-    fields = ['request_id', 'Weathers', 'Periods', 'Times', 'LocationsDetails']
+    class Meta:
+        model = Location
+        fields = [
+            "task_id",
+            "weathers",
+            "periods",
+            "times",
+            "locations_details",
+        ]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class OutfitsSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Outfits
-    fields = ['request_id', 'Jobs', 'JobsDetails', 'OutfitsDetails', 'EquipsDetails']
+    class Meta:
+        model = Outfits
+        fields = [
+            "task_id",
+            "jobs",
+            "jobs_details",
+            "outfits_details",
+            "equips_details",
+        ]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class HairsSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Hairs
-    fields = ['request_id', 'Size', 'HairStyle', 'BangsStyle']
+    class Meta:
+        model = Hairs
+        fields = [
+            "task_id",
+            "size",
+            "hair_style",
+            "bangs_style",
+        ]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class FacesSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Faces
-    fields = ['request_id', 'Looks', 'Eyes', 'Personality', 'Moods']
+    class Meta:
+        model = Faces
+        fields = [
+            "task_id",
+            "looks",
+            "eyes",
+            "personality",
+            "moods",
+        ]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class FiguresSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Figures
-    fields = ['request_id', 'Thickness', 'Boobs', 'Bodies', 'Butts', 'SkinDetails']
+    class Meta:
+        model = Figures
+        fields = [
+            "task_id",
+            "thickness",
+            "boobs",
+            "bodies",
+            "butts",
+            "skin_details",
+        ]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class UppersSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Uppers
-    fields = ['request_id', 'Inverted', 'Puffy', 'Areola', 'Nipples']
+    class Meta:
+        model = Uppers
+        fields = [
+            "task_id",
+            "inverted",
+            "puffy",
+            "areola",
+            "nipples",
+        ]
+
+
 # =========+=========+=========+=========+=========+
+
 
 class LowersSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Lowers
-    fields = ['request_id', 'Model', 'Public', 'Size', 'Sheath', 'Foreskin', 'GenitalDetails']
+    class Meta:
+        model = Lowers
+        fields = [
+            "task_id",
+            "model",
+            "public",
+            "size",
+            "sheath",
+            "foreskin",
+            "genital_details",
+        ]
+
+
 # =========+=========+=========+=========+=========+
 
+
 class ColorsSerializer(BaseModelClassSerializer):
-  class Meta:
-    model = Colors
-    fields = ['request_id', 'Theme', 'Hair', 'Eyes', 'OutfitsMain', 'OutfitsSub', 'EquipsMain', 'EquipsSub', 'SkinMain', 'SkinSub', 'Nipples', 'Genitals']
+    class Meta:
+        model = Colors
+        fields = [
+            "task_id",
+            "theme",
+            "hair",
+            "eyes",
+            "outfits_main",
+            "outfits_sub",
+            "equips_main",
+            "equips_sub",
+            "skin_main",
+            "skin_sub",
+            "nipples",
+            "genitals",
+        ]
+
+
 # =========+=========+=========+=========+=========+
