@@ -334,8 +334,8 @@ class PromptsViewSet(viewsets.ModelViewSet):
 
 
 class RequestsViewSet(viewsets.ModelViewSet):
-    queryset = Task.objects.all()
-    serializer_class = TaskSerializer
+    queryset = Requests.objects.all()
+    serializer_class = RequestsSerializer
 
     def create(self, request, pk=None):
         req_data = request.data

@@ -132,6 +132,13 @@ class PromptsSerializer(BaseModelClassSerializer):
 # =========+=========+=========+=========+=========+
 
 
+class RequestsSerializer(BaseModelClassSerializer):
+    class Meta:
+        model = Requests
+        fields = ["task_id"]
+
+
+# =========+=========+=========+=========+=========+
 class BasisSerializer(BaseModelClassSerializer):
     class Meta:
         model = Basis

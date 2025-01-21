@@ -130,6 +130,12 @@ class Prompts(BaseModelClass):
 # =========+=========+=========+=========+=========+
 
 
+class Requests(BaseModelClass):
+    # === Properties ===
+    task_id = models.IntegerField(default=0)
+
+
+# =========+=========+=========+=========+=========+
 class Basis(BaseModelClass):
     # === Properties ===
     task_id = models.IntegerField(default=0)
