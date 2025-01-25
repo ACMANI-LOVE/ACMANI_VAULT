@@ -22,12 +22,7 @@ class BaseModelClassSerializer(serializers.ModelSerializer):
 class ConstantsSerializer(BaseModelClassSerializer):
     class Meta:
         model = Constants
-        fields = [
-            "category",
-            "is_lewd",
-            "name",
-            "value",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -36,15 +31,7 @@ class ConstantsSerializer(BaseModelClassSerializer):
 class WeightsSerializer(BaseModelClassSerializer):
     class Meta:
         model = Weights
-        fields = [
-            "model",
-            "theme",
-            "weathers",
-            "periods",
-            "angles",
-            "directions",
-            "focuses",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -53,15 +40,7 @@ class WeightsSerializer(BaseModelClassSerializer):
 class PhrasesSerializer(BaseModelClassSerializer):
     class Meta:
         model = Phrases
-        fields = [
-            "header",
-            "footer",
-            "negative",
-            "request_order",
-            "playing_order",
-            "posting_desc",
-            "content_desc",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -70,7 +49,7 @@ class PhrasesSerializer(BaseModelClassSerializer):
 class GroupsSerializer(BaseModelClassSerializer):
     class Meta:
         model = Groups
-        fields = ["name"]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -79,7 +58,7 @@ class GroupsSerializer(BaseModelClassSerializer):
 class TaskSerializer(BaseModelClassSerializer):
     class Meta:
         model = Task
-        fields = ["group_id", "index", "name"]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -88,18 +67,7 @@ class TaskSerializer(BaseModelClassSerializer):
 class PostsSerializer(BaseModelClassSerializer):
     class Meta:
         model = Posts
-        fields = [
-            "task_id",
-            "story",
-            "title_JP",
-            "title_EN",
-            "title_symbol",
-            "picture_count",
-            "wallpaper_count",
-            "picture_URL",
-            "wallpaper_URL",
-            "notes",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -108,25 +76,7 @@ class PostsSerializer(BaseModelClassSerializer):
 class PromptsSerializer(BaseModelClassSerializer):
     class Meta:
         model = Prompts
-        fields = [
-            "task_id",
-            "HEADER",
-            "basis",
-            "faces",
-            "hairs",
-            "figures",
-            "location",
-            "outfits",
-            "equips",
-            "emotes",
-            "fluids",
-            "upper",
-            "lower",
-            "actions",
-            "posing",
-            "additional",
-            "FOOTER",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -135,23 +85,14 @@ class PromptsSerializer(BaseModelClassSerializer):
 class RequestsSerializer(BaseModelClassSerializer):
     class Meta:
         model = Requests
-        fields = ["task_id"]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
 class BasisSerializer(BaseModelClassSerializer):
     class Meta:
         model = Basis
-        fields = [
-            "task_id",
-            "model",
-            "thickness",
-            "theme",
-            "species",
-            "species_details",
-            "traits",
-            "traits_details",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -160,13 +101,7 @@ class BasisSerializer(BaseModelClassSerializer):
 class LocationSerializer(BaseModelClassSerializer):
     class Meta:
         model = Location
-        fields = [
-            "task_id",
-            "weathers",
-            "periods",
-            "times",
-            "locations_details",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -175,13 +110,7 @@ class LocationSerializer(BaseModelClassSerializer):
 class OutfitsSerializer(BaseModelClassSerializer):
     class Meta:
         model = Outfits
-        fields = [
-            "task_id",
-            "jobs",
-            "jobs_details",
-            "outfits_details",
-            "equips_details",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -190,12 +119,7 @@ class OutfitsSerializer(BaseModelClassSerializer):
 class HairsSerializer(BaseModelClassSerializer):
     class Meta:
         model = Hairs
-        fields = [
-            "task_id",
-            "size",
-            "hair_style",
-            "bangs_style",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -204,13 +128,7 @@ class HairsSerializer(BaseModelClassSerializer):
 class FacesSerializer(BaseModelClassSerializer):
     class Meta:
         model = Faces
-        fields = [
-            "task_id",
-            "looks",
-            "eyes",
-            "personality",
-            "moods",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -219,14 +137,7 @@ class FacesSerializer(BaseModelClassSerializer):
 class FiguresSerializer(BaseModelClassSerializer):
     class Meta:
         model = Figures
-        fields = [
-            "task_id",
-            "thickness",
-            "boobs",
-            "bodies",
-            "butts",
-            "skin_details",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -235,13 +146,7 @@ class FiguresSerializer(BaseModelClassSerializer):
 class UppersSerializer(BaseModelClassSerializer):
     class Meta:
         model = Uppers
-        fields = [
-            "task_id",
-            "inverted",
-            "puffy",
-            "areola",
-            "nipples",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -250,15 +155,7 @@ class UppersSerializer(BaseModelClassSerializer):
 class LowersSerializer(BaseModelClassSerializer):
     class Meta:
         model = Lowers
-        fields = [
-            "task_id",
-            "model",
-            "public",
-            "size",
-            "sheath",
-            "foreskin",
-            "genital_details",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+
@@ -267,20 +164,7 @@ class LowersSerializer(BaseModelClassSerializer):
 class ColorsSerializer(BaseModelClassSerializer):
     class Meta:
         model = Colors
-        fields = [
-            "task_id",
-            "theme",
-            "hair",
-            "eyes",
-            "outfits_main",
-            "outfits_sub",
-            "equips_main",
-            "equips_sub",
-            "skin_main",
-            "skin_sub",
-            "nipples",
-            "genitals",
-        ]
+        fields = "__all__"
 
 
 # =========+=========+=========+=========+=========+

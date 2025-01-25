@@ -17,12 +17,12 @@ class BaseModelClass(models.Model):
         return f"ID:[{self.id}] Created:[{self.created_at}] Delete:[{self.deleted_at}]"
 
     @classmethod
-    def valid_list(target):
+    def valid_list(self, target):
         if not isinstance(target, list):
             raise ValidationError("This field must be a LIST...")
 
     @classmethod
-    def valid_dict(target):
+    def valid_dict(self, target):
         if not isinstance(target, dict):
             raise ValidationError("This field must be a JSON...")
 
@@ -91,7 +91,7 @@ class Task(BaseModelClass):
 
 class Posts(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
     story = models.TextField(default="")
     title_JP = models.TextField(default="")
     title_EN = models.TextField(default="")
@@ -108,7 +108,7 @@ class Posts(BaseModelClass):
 
 class Prompts(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
     HEADER = models.TextField(default="")
     basis = models.TextField(default="")
     faces = models.TextField(default="")
@@ -132,13 +132,13 @@ class Prompts(BaseModelClass):
 
 class Requests(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
 
 
 # =========+=========+=========+=========+=========+
 class Basis(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
     model = models.IntegerField(default=0)
     thickness = models.IntegerField(default=0)
     theme = models.IntegerField(default=0)
@@ -153,7 +153,7 @@ class Basis(BaseModelClass):
 
 class Location(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
     weathers = models.IntegerField(default=0)
     periods = models.IntegerField(default=0)
     times = models.IntegerField(default=0)
@@ -165,7 +165,7 @@ class Location(BaseModelClass):
 
 class Outfits(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
     jobs = models.TextField(default="")
     jobs_details = models.TextField(default="")
     outfits_details = models.TextField(default="")
@@ -177,7 +177,7 @@ class Outfits(BaseModelClass):
 
 class Hairs(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
     size = models.IntegerField(default=0)
     hair_style = models.TextField(default="")
     bangs_style = models.TextField(default="")
@@ -188,7 +188,7 @@ class Hairs(BaseModelClass):
 
 class Faces(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
     looks = models.IntegerField(default=0)
     eyes = models.IntegerField(default=0)
     personality = models.IntegerField(default=0)
@@ -200,7 +200,7 @@ class Faces(BaseModelClass):
 
 class Figures(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
     thickness = models.IntegerField(default=0)
     boobs = models.IntegerField(default=0)
     bodies = models.IntegerField(default=0)
@@ -213,7 +213,7 @@ class Figures(BaseModelClass):
 
 class Uppers(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
     inverted = models.IntegerField(default=0)
     puffy = models.IntegerField(default=0)
     areola = models.IntegerField(default=0)
@@ -225,7 +225,7 @@ class Uppers(BaseModelClass):
 
 class Lowers(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
     model = models.IntegerField(default=0)
     public = models.IntegerField(default=0)
     size = models.IntegerField(default=0)
@@ -239,7 +239,7 @@ class Lowers(BaseModelClass):
 
 class Colors(BaseModelClass):
     # === Properties ===
-    task_id = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, unique=True)
     theme = models.IntegerField(default=0)
     hair = models.TextField(default="")
     eyes = models.TextField(default="")
