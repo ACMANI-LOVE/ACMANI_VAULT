@@ -10,9 +10,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="jp">
-      <body className={"APP_BODY"}>
+      <body className={"APP_BODY"} style={{margin:"none"}}>
         {children}
       </body>
     </html>

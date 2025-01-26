@@ -1,96 +1,90 @@
 'use client'
-import { Box, Button } from "@mui/material";
 import { deleteGroupsAPI, getConfigsAPI, getGroupsAPI, getTasksAPI, patchGroupsAPI, patchPostsAPI, patchPromptsAPI, patchRequestsAPI, postConfigsAPI, postGroupsAPI, postPostsAPI, postPromptsAPI, postRequestsAPI, putConfigsAPI } from "@/api/api"
+import { FrameBox } from "./component/atomos/atomos";
+import Providers from "./component/hooks/useProviders"
+import useAppFrame from "./component/hooks/useAppFrame";
 
-const Home = () => {
-  const getConfigs    = async () => {
-    const res = await getConfigsAPI   ()
-    console.log(res)
-  }
-  const putConfigs    = async () => {
-    const res = await putConfigsAPI   ({request:updateConfigsData})
-    console.log(res)
-  }
+const Page = () => {
+  const [AppBar,  SideMenu] = useAppFrame({})
 
-  const postConfigs   = async () => {
-    const res = await postConfigsAPI  ({request:altrConstantsData})
-    console.log(res)
-  }
-
-  const getGroups     = async () => {
-    const res = await getGroupsAPI    ()
-    console.log(res)
-  }
-  const postGroups    = async () => {
-    const res = await postGroupsAPI   ({request:postGroupData})
-    console.log(res)
-  }
-
-  const patchGroups   = async () => {
-    const res = await patchGroupsAPI  ({parameter:"8", request:patchGroupData})
-    console.log(res)
-  }
-
-  const deleteGroups  = async () => {
-    const res = await deleteGroupsAPI ({parameter:"8"})
-    console.log(res)
-  }
-
-  const getTasks      = async () => {
-    const res = await getTasksAPI     ({parameter:"34"})
-    console.log(res)
-  }
-
-  const postPosts     = async () => {
-    const res = await postPostsAPI    ({ request: postPostData})
-    console.log(res)
-  }
-  const patchPosts    = async () => {
-    const res = await patchPostsAPI   ({parameter:"1", request: patchPostData})
-    console.log(res)
-  }
-
-  const postPrompts   = async () => {
-    const res = await postPromptsAPI  ({request: postPrmptData})
-    console.log(res)
-  }
-  const patchPrompts  = async () => {
-    const res = await patchPromptsAPI ({parameter:"1", request: patchPrmptData})
-    console.log(res)
-  }
-
-  const postRequests  = async () => {
-    const res = await postRequestsAPI ({ request: postReqData })
-    console.log(res)
-  }
-  const patchRequests = async () => {
-    const res = await patchRequestsAPI({parameter:"0", request:patchReqData})
-    console.log(res)
-  }
-  return (<Box display={"flex"} flexDirection={"column"}>
-    Config
-    <Button variant="contained" onClick={getConfigs    }>getConfigsAPI   </Button>
-    <Button variant="contained" onClick={putConfigs    }>putConfigsAPI   </Button>
-    <Button variant="contained" onClick={postConfigs   }>postConfigsAPI  </Button>
-    Groups
-    <Button variant="contained" onClick={getGroups     }>getGroupAPI     </Button>
-    <Button variant="contained" onClick={postGroups    }>postGroupAPI    </Button>
-    <Button variant="contained" onClick={patchGroups   }>patchGroupAPI   </Button>
-    <Button variant="contained" onClick={deleteGroups  }>deleteGroupAPI  </Button>
-    Tasks
-    <Button variant="contained" onClick={getTasks      }>getTaskAPI      </Button>
-    Posts
-    <Button variant="contained" onClick={postPosts     }>postPostsAPI    </Button>
-    <Button variant="contained" onClick={patchPosts    }>patchPostsAPI   </Button>
-    Prompts
-    <Button variant="contained" onClick={postPrompts   }>postPromptsAPI  </Button>
-    <Button variant="contained" onClick={patchPrompts  }>patchPromptsAPI </Button>
-    Requests
-    <Button variant="contained" onClick={postRequests  }>postRequestsAPI </Button>
-    <Button variant="contained" onClick={patchRequests }>patchRequestsAPI</Button>
-  </Box>);
+  return (<Providers>
+    <FrameBox height={"100%"} direction={"column"}>
+      <AppBar/>
+      <FrameBox height={"100%"} direction={"row"}>
+        <SideMenu/>
+      </FrameBox>
+    </FrameBox>
+  </Providers>)
 }
-export default Home
+export default Page
+
+
+
+const getConfigs    = async () => {
+  const res = await getConfigsAPI   ()
+  console.log(res)
+}
+const putConfigs    = async () => {
+  const res = await putConfigsAPI   ({request:updateConfigsData})
+  console.log(res)
+}
+
+const postConfigs   = async () => {
+  const res = await postConfigsAPI  ({request:altrConstantsData})
+  console.log(res)
+}
+
+const getGroups     = async () => {
+  const res = await getGroupsAPI    ()
+  console.log(res)
+}
+const postGroups    = async () => {
+  const res = await postGroupsAPI   ({request:postGroupData})
+  console.log(res)
+}
+
+const patchGroups   = async () => {
+  const res = await patchGroupsAPI  ({parameter:"8", request:patchGroupData})
+  console.log(res)
+}
+
+const deleteGroups  = async () => {
+  const res = await deleteGroupsAPI ({parameter:"8"})
+  console.log(res)
+}
+
+const getTasks      = async () => {
+  const res = await getTasksAPI     ({parameter:"34"})
+  console.log(res)
+}
+
+const postPosts     = async () => {
+  const res = await postPostsAPI    ({ request: postPostData})
+  console.log(res)
+}
+const patchPosts    = async () => {
+  const res = await patchPostsAPI   ({parameter:"1", request: patchPostData})
+  console.log(res)
+}
+
+const postPrompts   = async () => {
+  const res = await postPromptsAPI  ({request: postPrmptData})
+  console.log(res)
+}
+const patchPrompts  = async () => {
+  const res = await patchPromptsAPI ({parameter:"1", request: patchPrmptData})
+  console.log(res)
+}
+
+const postRequests  = async () => {
+  const res = await postRequestsAPI ({ request: postReqData })
+  console.log(res)
+}
+const patchRequests = async () => {
+  const res = await patchRequestsAPI({parameter:"0", request:patchReqData})
+  console.log(res)
+}
+
 
 interface RequestConfigs {
   weights: WeightsInfo
