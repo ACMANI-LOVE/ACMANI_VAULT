@@ -1,15 +1,14 @@
 import { FormControl, RadioGroup, FormControlLabel, Radio } from "@mui/material"
-import { FrameBox } from "../atomos/atomos"
+import { FrameBox } from "../atoms/atoms"
 import { BaseSyntheticEvent } from "react"
 
-interface SelectorProps {
+interface RadioListProps {
   list:     string[]
   select:  number
   onChange: (e:BaseSyntheticEvent) => void
-
 }
 
-const Selector = ({list, select, onChange}:SelectorProps) => {
+const RadioList = ({list, select, onChange}:RadioListProps) => {
   return (<FrameBox padding={"0.1em"} direction={"column"}>
     <FormControl>
       <RadioGroup defaultValue={select} onChange={onChange}>
@@ -24,4 +23,4 @@ const Selector = ({list, select, onChange}:SelectorProps) => {
   </FrameBox>)
 }
 
-export default Selector
+export default RadioList

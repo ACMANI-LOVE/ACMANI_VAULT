@@ -14,6 +14,7 @@ export const FlexBox = ({fx, children}:FlexBoxProps) => {
 interface FrameBoxProps {
   bgColor?:   string
   padding?:   string
+  gap?:       string
   width?:     string
   height?:    string
   direction?: "row"|"column"
@@ -21,8 +22,8 @@ interface FrameBoxProps {
   justify?:   "start"|"center"|"end"|"space-around"|"space-between"|"space-evenly"
   children: ReactNode
 }
-export const FrameBox = ({bgColor, direction, padding, width, height, align, justify, children}:FrameBoxProps) => {
-  return (<Box display={"flex"} flexDirection={direction} width={width} height={height} alignItems={align} justifyContent={justify} padding={padding} bgcolor={bgColor}>
+export const FrameBox = ({bgColor, direction, padding, gap, width, height, align, justify, children}:FrameBoxProps) => {
+  return (<Box display={"flex"} flexDirection={direction} width={width} height={height} alignItems={align} justifyContent={justify} padding={padding} gap={gap} bgcolor={bgColor}>
     {children}
   </Box>)
 }
