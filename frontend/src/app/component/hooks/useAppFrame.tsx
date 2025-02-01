@@ -16,7 +16,7 @@ const useAppFrame = ({}:AppFrameProps):AppFrameReturns => {
 
   const clickMenuButton = () => setMenuFlg(!menuFlg)
 
-  const AppBar = () => <AppBarComponent onClick={clickMenuButton}/>
+  const AppBar = () => <AppBarComponent onClickMenu={clickMenuButton}/>
 
   const SideMenu = () => <SideMenuComponent open={menuFlg}/>
 

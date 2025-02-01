@@ -1,6 +1,6 @@
 'use client'
 import { deleteGroupsAPI, getConfigsAPI, getGroupsAPI, getTasksAPI, patchGroupsAPI, patchPostsAPI, patchPromptsAPI, patchRequestsAPI, postConfigsAPI, postGroupsAPI, postPostsAPI, postPromptsAPI, postRequestsAPI, putConfigsAPI } from "@/api/api"
-import { FrameBox } from "./component/atomos/atomos";
+import { FrameBox } from "./component/atoms/atoms";
 import Providers from "./component/hooks/useProviders"
 import useAppFrame from "./component/hooks/useAppFrame";
 

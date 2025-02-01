@@ -1,6 +1,6 @@
 import { ReactNode, useContext, useEffect } from "react";
-import SlideAnimation from "../molucules/sideAnimation";
-import { FrameBox, ButtonComponent, DividerLine, FlexBox, LargeLabel, SmallLabel, MediumLabel } from "../atomos/atomos";
+import SlideAnimation from "../molecules/sideAnimation";
+import { FrameBox, ButtonComponent, DividerLine, FlexBox, LargeLabel, SmallLabel, MediumLabel } from "../atoms/atoms";
 import { AppState, StateContext } from "../hooks/useProviders";
 
 interface SideMenuProps {
@@ -8,15 +8,15 @@ interface SideMenuProps {
 }
 const SideMenuComponent = ({open}:SideMenuProps) => {
 
-  const { appState, taskState } = useContext(StateContext)
+  const { appState } = useContext(StateContext)
   const clickManageConfigs = () => appState.setState("CONFIG")
   const clickTurnBack      = () => appState.setState("TASK")
 
-  const [RadioSelector, selectIdx] = useRadioSelector({selectList:taskState.list, initialIndex:taskState.state})
-  useEffect(()=>taskState.setState(selectIdx),[selectIdx])
+  const [RadioSelector, selectIdx] = useRadioSelector({selectList:[], initialIndex:0})
+  useEffect(()=>{},[selectIdx])
 
   const TaskSelector = () => {
-    const SelectField = () => (taskState.list.length > 0)
+    const SelectField = () => ([].length > 0)
       ? <RadioSelector/>
       : <FrameBox padding={"0.5em"} justify="center" align="center">
         <MediumLabel text={" - No Items. - "}/>
@@ -24,8 +24,8 @@ const SideMenuComponent = ({open}:SideMenuProps) => {
     return (<FrameBox padding={"0.5em"} direction={"column"} width={"100%"}>
       <LargeLabel text={"Task List"}/>
       <FrameBox direction={"column"}>
-        <SmallLabel text={`Now Select${taskState.state}`}/>
-        <SmallLabel text={`Now Select${taskState.list[selectIdx]}`}/>
+        <SmallLabel text={`Now Select${0}`}/>
+        <SmallLabel text={`Now Select${0}`}/>
       </FrameBox>
       <DividerLine/>
       <SelectField/>
