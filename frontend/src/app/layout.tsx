@@ -13,7 +13,7 @@ export default function RootLayout({
 
   return (
     <html lang="jp">
-      <body className={"APP_BODY"} style={{margin:"none", backgroundColor:"#0008"}}>
+      <body className={"APP_BODY"} style={{margin:"none", backgroundColor:"#0000"}}>
         {children}
       </body>
     </html>

@@ -1,4 +1,4 @@
-import { Select, SelectChangeEvent, MenuItem, FormControl } from "@mui/material"
+import { FormControl, MenuItem, Select, SelectChangeEvent } from "@mui/material"
 
 interface ListSelectorProps {
   list:    string[]

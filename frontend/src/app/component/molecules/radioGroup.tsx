@@ -1,6 +1,6 @@
-import { FormControl, RadioGroup, FormControlLabel, Radio } from "@mui/material"
-import { FrameBox } from "../atoms/atoms"
+import { FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material"
 import { BaseSyntheticEvent } from "react"
+import { FrameBox } from "../atoms/atoms"
 
 interface RadioListProps {
   list:     string[]

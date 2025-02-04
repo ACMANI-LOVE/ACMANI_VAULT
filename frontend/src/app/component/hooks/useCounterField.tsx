@@ -1,5 +1,6 @@
 import { TextField } from "@mui/material"
-import { ReactNode, useState, useCallback, BaseSyntheticEvent } from "react"
+import { BaseSyntheticEvent, ReactNode, useCallback, useState } from "react"
+import { FrameBox } from "../atoms/atoms"
 
 interface CounterFieldProps {
   initialValue: number
@@ -12,12 +13,13 @@ const useCounterField = ({initialValue}:CounterFieldProps) => {
   const [counterValue, setCounterValue] = useState(initialValue)
   const CounterField = useCallback(()=>{
     const handleChangeValue = (e:BaseSyntheticEvent) => setCounterValue(Number(e.target.value))
-    return (
-    <TextField value={counterValue} onChange={handleChangeValue} type={"number"} slotProps={{
-      inputLabel: {
-        shrink: true,
-      },
-    }}/>)
+    return (<FrameBox direction={"row"} width={"100%"}>
+      <TextField fullWidth value={counterValue} onChange={handleChangeValue} type={"number"} slotProps={{
+        inputLabel: {
+          shrink: true,
+        },
+      }}/>
+    </FrameBox>)
   },[counterValue])
   return [CounterField, counterValue] as CounterFieldReturns
 }

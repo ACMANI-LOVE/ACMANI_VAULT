@@ -1,4 +1,5 @@
-import { Box, Button, Divider, Typography } from "@mui/material"
+import MenuIcon from '@mui/icons-material/Menu'
+import { Box, Button, Divider, IconButton, Typography } from "@mui/material"
 import { ReactNode } from "react"
 
 interface FlexBoxProps {
@@ -45,6 +46,18 @@ export const ButtonComponent = ({label, textSize, btnType, onClick}:ButtonProps)
   <Typography variant={textSize}>{label}</Typography>
 </Button>)
 }
+
+interface IconButtonProps {
+  size?: "large"|"medium"|"small"
+  onClick: ()=>void
+}
+export const MenuIconButton = ({onClick, size="small"}:IconButtonProps) => {
+  return (    <IconButton onClick={onClick}>
+    <MenuIcon fontSize={size}/>
+  </IconButton>)
+}
+
+
 
 interface LabelTextProps {
   text: string

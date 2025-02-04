@@ -1,6 +1,4 @@
-import { Select, SelectChangeEvent, MenuItem, FormControl } from "@mui/material"
-import { FlexBox, FrameBox } from "../atoms/atoms"
-import { useEffect, useState } from "react"
+import { FormControl, MenuItem, Select, SelectChangeEvent } from "@mui/material"
 
 interface ListSelectorProps {
   list:     string[]

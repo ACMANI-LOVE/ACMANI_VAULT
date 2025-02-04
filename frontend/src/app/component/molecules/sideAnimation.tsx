@@ -1,4 +1,4 @@
-import { Slide, Box } from "@mui/material"
+import { Box, Slide } from "@mui/material"
 import { ReactNode } from "react"
 
 interface SlideAnimationProps {
@@ -8,8 +8,10 @@ interface SlideAnimationProps {
 }
 const SlideAnimation = ({direction, state, children}:SlideAnimationProps) => {
   return (<Slide direction={direction} in={state} mountOnEnter unmountOnExit>
-    <Box display={"flex"} flexDirection={"column"} flex={1}>
-      {children}
+    <Box display={"flex"} width={"25%"}>
+      <Box display={"flex"} flexDirection={"column"} flex={1}>
+        {children}
+      </Box>
     </Box>
   </Slide>)
 }

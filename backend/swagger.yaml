@@ -163,15 +163,6 @@ paths:
           schema:
             type: integer
           description: group_id for DELETE
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                data:
-                  $ref: '#/components/schemas/Groups'
       responses:
         '200':
           description: SUCCESS MESSAGE [Delete]
